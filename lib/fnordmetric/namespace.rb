@@ -51,8 +51,6 @@ class FnordMetric::Namespace
   end
 
   def announce_to_timeline(event)
-    puts 'test'
-    log 'test'
     timeline_key = key_prefix(:timeline)
     @redis.zadd(timeline_key, event[:_time], event[:_eid])
   end
